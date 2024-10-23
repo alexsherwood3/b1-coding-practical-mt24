@@ -77,7 +77,7 @@ class Mission:
 
     @classmethod
     def from_csv(cls, file_name: str):
-        # Read the CSV file
+        #create dataframe 'data' using pandas to store contents of csv file
         data = pd.read_csv(file_name)
         
         # Extract the relevant columns from the file
@@ -85,7 +85,7 @@ class Mission:
         cave_height = data['cave_height'].values
         cave_depth = data['cave_depth'].values
 
-        # Return a new instance of Mission with the extracted data
+        # Return a new instance of mission with the extracted data
         return cls(reference, cave_height, cave_depth)
 
 
