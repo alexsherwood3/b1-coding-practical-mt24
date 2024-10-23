@@ -1,4 +1,4 @@
-class Controller:
+class Control:
     def __init__(self, Kp: float, Kd: float):
         # Proportional and Derivative gains for the controller
         self.Kp = Kp
