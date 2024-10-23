@@ -85,7 +85,6 @@ class Mission:
 
         # Return an instance of the class
         return cls(reference=reference, cave_height=cave_height, cave_depth=cave_depth)
-        pass
 
 
 class ClosedLoop:
