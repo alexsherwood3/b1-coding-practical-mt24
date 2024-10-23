@@ -106,7 +106,10 @@ class ClosedLoop:
         for t in range(T):
             positions[t] = self.plant.get_position()
             observation_t = self.plant.get_depth()
-            # Call your controller here
+            reference_t = mission.reference[t]     # Reference depth at time t
+            # Compute the control action using the controller
+            actions[t] = self.controller.control(reference_t, observation_t)
+            # Apply the control action along with the disturbance to the submarine
             self.plant.transition(actions[t], disturbances[t])
 
         return Trajectory(positions)
